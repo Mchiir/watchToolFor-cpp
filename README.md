@@ -28,9 +28,9 @@ After installation, verify that Chocolatey was successfully installed by running
 
 Now that Chocolatey is installed, you can easily install watchexec, which will monitor your project files for changes and automatically rebuild the project.
 
-    Install watchexec using Chocolatey:
+Install watchexec using Chocolatey:
 
-choco install watchexec
+    choco install watchexec
 
 Verify the installation by checking the version:
 
@@ -40,9 +40,9 @@ Verify the installation by checking the version:
 
 Make is essential for automating the build process. You can easily install it with Chocolatey as well.
 
-    Install make by running:
+Install make by running:
 
-choco install make
+    choco install make
 
 Verify the installation:
 
@@ -50,19 +50,19 @@ Verify the installation:
 
 📝 Creating Your Makefile
 
-Now that the tools are installed, you need to create a Makefile to automate the compilation of your C++ project. In your project directory, create a file named Makefile (without any extension) with the following content:
+Now that the tools are installed, you need to create a Makefile to automate the compilation of your C++ project. In your project directory, create a file named 'Makefile' (without any extension) with the following content:
 
-# This is the default target
-all: main.exe
+    # This is the default target
+    all: main.exe
 
-# Rule to build main.exe from main.cpp
-main.exe: main.cpp
-# Compile main.cpp into an executable named main.exe
-	g++ -o main.exe main.cpp
+    # Rule to build main.exe from main.cpp
+    main.exe: main.cpp
+    # Compile main.cpp into an executable named main.exe
+        g++ -o main.exe main.cpp
 
-# Clean target to delete the compiled executable
-clean:
-	del main.exe
+    # Clean target to delete the compiled executable
+    clean:
+        del main.exe
 
 📚 Explanation:
 
@@ -77,26 +77,28 @@ Now that everything is set up, you can use watchexec to automatically monitor fi
 
 To automatically rebuild your project whenever you make changes to your main.cpp file, run the following command:
 
-watchexec -- make;
+    watchexec -- make;
 
-This command will watch your project directory for any changes in files and automatically re-run make to rebuild the project.
+This command will watch your project directory for any changes in files and automatically re-run make to rebuild the project(main.cpp).
 2. 🔨 Manual Build with Make
 
 If you prefer to manually trigger the build process, you can use:
 
-make
+    make
 
 This command will compile your project based on the instructions in the Makefile.
+
 3. 🧹 Cleaning the Build
 
 To remove the previously compiled main.exe file, you can use the clean target:
 
-make clean
+    make clean
 
 This will delete the main.exe file.
 ⚠️ Troubleshooting
 
 If you encounter any issues during installation or configuration, feel free to reach out for assistance. You can email me at: mugishachrispin590@gmail.com.
+
 ✋ Farewell and Happy Coding!
 
 I hope this guide helps you automate your C++ project workflow, saving you time and effort while you focus on what matters most—coding. Happy programming! 🚀
